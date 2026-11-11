@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://hcdrc.github.io/sitemap.xml
