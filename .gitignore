@@ -1,2 +1,4 @@
 reference/
 *.xlsx
+__pycache__/
+tools/
