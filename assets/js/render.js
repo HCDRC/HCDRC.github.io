@@ -80,7 +80,7 @@
       return;
     }
     el.innerHTML =
-      patentSection('registered', 'International Patents (Registered)',
+      patentSection('registered', 'International Patents (Granted)',
         PATENTS.filter(function (p) { return p.status === 'registered'; })) +
       patentSection('applications', 'International Patents (Filed)',
         PATENTS.filter(function (p) { return p.status !== 'registered'; }));
