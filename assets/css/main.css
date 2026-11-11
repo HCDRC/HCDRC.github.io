@@ -1,0 +1,225 @@
+/* HCDRC site styles — derived from the al-folio based theme of bioloid.github.io */
+
+/****************************************************************************** Themes */
+:root { --global-bg-color: #ffffff; --global-text-color: #000000; --global-text-color-light: #6f6f6f; --global-theme-color: #0B5CAD; --global-hover-color: #0B5CAD; --global-divider-color: rgba(0,0,0,.1); --global-tile-color: rgba(0,0,0,.025); }
+
+:root .fa-sun { display: none; }
+
+:root .fa-moon { padding-left: 10px; padding-top: 12px; display: block; }
+
+#light-toggle { -webkit-appearance: none; appearance: none; color: var(--global-text-color); background: none; border: 0; border-radius: 0; box-shadow: none; outline: none; padding: 0; cursor: pointer; }
+
+#light-toggle:focus { outline: none; box-shadow: none; }
+
+#light-toggle:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 2px; border-radius: 2px; }
+
+html[data-theme='dark'] { --global-bg-color: #1C1C1D; --global-text-color: #e8e8e8; --global-text-color-light: #a6a6a6; --global-theme-color: #5AA9E6; --global-hover-color: #5AA9E6; --global-divider-color: #424246; --global-tile-color: rgba(255,255,255,.03); }
+
+html[data-theme='dark'] .fa-sun { padding-left: 10px; padding-top: 12px; display: block; }
+
+html[data-theme='dark'] .fa-moon { display: none; }
+
+/****************************************************************************** Base */
+body { padding-bottom: 70px; color: var(--global-text-color); background-color: var(--global-bg-color); font-family: Roboto, "Noto Sans KR", sans-serif; overflow-wrap: break-word; }
+
+body.fixed-top-nav { padding-top: 56px; }
+
+body.sticky-bottom-footer { padding-bottom: 0; }
+
+.container { max-width: 800px; }
+
+p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong, dt, dd { color: var(--global-text-color); }
+
+hr { border-top: 1px solid var(--global-divider-color); }
+
+a, table.table a { color: var(--global-theme-color); }
+
+a:hover, table.table a:hover { color: var(--global-theme-color); text-decoration: underline; }
+
+.post-description { margin-bottom: 2rem; font-size: 1rem; color: var(--global-text-color-light); }
+
+/****************************************************************************** Navbar */
+.navbar { box-shadow: none; border-bottom: 1px solid var(--global-divider-color); background-color: var(--global-bg-color); }
+
+.navbar.navbar-light a:hover { text-decoration: none; }
+
+.navbar.navbar-light .navbar-brand { color: var(--global-text-color); }
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link { color: var(--global-text-color); font-weight: 400; }
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link:hover { color: var(--global-hover-color); }
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link { background-color: inherit; font-weight: 700; color: var(--global-theme-color); }
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link:hover { color: var(--global-hover-color); }
+
+.navbar-toggler .icon-bar { display: block; width: 22px; height: 2px; background-color: var(--global-text-color); border-radius: 1px; margin-bottom: 4px; transition: all 0.2s; }
+
+.navbar-toggler .top-bar { transform: rotate(45deg); transform-origin: 10% 10%; }
+
+.navbar-toggler .middle-bar { opacity: 0; }
+
+.navbar-toggler .bottom-bar { transform: rotate(-45deg); transform-origin: 10% 90%; }
+
+.navbar-toggler.collapsed .top-bar { transform: rotate(0); }
+
+.navbar-toggler.collapsed .middle-bar { opacity: 1; }
+
+.navbar-toggler.collapsed .bottom-bar { transform: rotate(0); }
+
+/****************************************************************************** Overview page */
+.section { margin-top: 2.5rem; }
+
+.section h2 { margin-bottom: 1rem; font-size: 1.75rem; font-weight: 700; }
+
+.section h2 .more { margin-left: 0.5rem; font-size: 0.9rem; font-weight: 400; }
+
+.info-list { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.5rem 1rem; margin: 0; }
+
+.info-list dt { font-weight: 500; color: var(--global-text-color-light); }
+
+.info-list dd { margin: 0; }
+
+.goal-list { margin: 0; padding-left: 1.25rem; }
+
+.goal-list li { padding: 0.15rem 0; }
+
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+
+.stat { display: block; padding: 1rem 1.25rem; border: 1px solid var(--global-divider-color); border-radius: 6px; background-color: var(--global-tile-color); }
+
+.stat:hover { text-decoration: none; border-color: var(--global-theme-color); }
+
+.stat .stat-num { display: block; font-size: 2.25rem; font-weight: 500; line-height: 1.2; color: var(--global-theme-color); font-variant-numeric: tabular-nums; }
+
+.stat .stat-label { display: block; font-weight: 500; }
+
+.stat .stat-sub { display: block; font-size: 0.85rem; color: var(--global-text-color-light); }
+
+@media (max-width: 575.98px) {
+  .info-list { grid-template-columns: 1fr; gap: 0; }
+  .info-list dd { margin-bottom: 0.6rem; }
+  .stat { padding: 0.85rem 1rem; }
+}
+
+/****************************************************************************** Publication & patent lists */
+.publications { margin-top: 1rem; }
+
+.publications .year-heading { margin: 2rem 0 1rem; padding-bottom: 0.4rem; font-size: 1.35rem; border-bottom: 1px solid var(--global-divider-color); scroll-margin-top: 72px; }
+
+.publications .year-heading:first-child { margin-top: 0; }
+
+.publications .year-heading .count { font-size: 0.9rem; font-weight: 400; color: var(--global-text-color-light); }
+
+.publications ol.bibliography { list-style: none; margin: 0; padding: 0; }
+
+.publications ol.bibliography li { margin-bottom: 1rem; line-height: 1.6; }
+
+.publications ol.bibliography li:last-child { margin-bottom: 0; }
+
+.publications ol.bibliography li .title { font-weight: 500; }
+
+.publications ol.bibliography li .periodical { font-style: italic; }
+
+.publications ol.bibliography li .meta, .publications ol.bibliography li .meta span { font-size: 0.9rem; color: var(--global-text-color-light); }
+
+.publications ol.bibliography li .meta .people-label { font-weight: 500; }
+
+.publications ol.bibliography li .meta .sep { margin: 0 0.25rem; }
+
+.tag { display: inline-block; margin-right: 0.45rem; padding: 0 0.4rem; font-size: 0.7rem; font-weight: 500; line-height: 1.5; letter-spacing: 0.03em; text-transform: uppercase; vertical-align: 0.12em; color: var(--global-theme-color); border: 1px solid var(--global-theme-color); border-radius: 3px; white-space: nowrap; }
+
+.tag.tag-strong { color: #ffffff; background-color: var(--global-theme-color); }
+
+html[data-theme='dark'] .tag.tag-strong { color: #1C1C1D; }
+
+.tag.tag-soft { border-color: transparent; background-color: rgba(11, 92, 173, 0.12); }
+
+html[data-theme='dark'] .tag.tag-soft { background-color: rgba(90, 169, 230, 0.2); }
+
+.empty-state { padding: 1.5rem 0; color: var(--global-text-color-light); }
+
+/****************************************************************************** Footer */
+footer.sticky-bottom { border-top: 1px solid var(--global-divider-color); padding-top: 40px; padding-bottom: 40px; font-size: 0.9rem; }
+
+footer.sticky-bottom, footer.sticky-bottom div { color: var(--global-text-color-light); }
+
+html.transition, html.transition *, html.transition *:before, html.transition *:after { transition: all 750ms !important; transition-delay: 0 !important; }
+
+/****************************************************************************** Overview: Korean project description */
+[lang="ko"] { word-break: keep-all; }
+
+[lang="en"] { word-break: normal; }
+
+.center-header { display: flex; align-items: center; gap: 1.75rem; }
+
+.center-header .center-logo { flex: 0 0 auto; width: 150px; height: auto; }
+
+.center-header .post-title { font-size: 2.1rem; font-weight: 300; margin-bottom: 0.35rem; }
+
+.center-header .post-description { margin-bottom: 0; }
+
+.figure-block { margin: 1.5rem 0 0; }
+
+.figure-block img { display: block; width: 100%; height: auto; padding: 0.75rem; background: #ffffff; border: 1px solid var(--global-divider-color); border-radius: 6px; }
+
+.figure-block a:hover img { border-color: var(--global-theme-color); }
+
+.figure-block figcaption { margin-top: 0.5rem; font-size: 0.85rem; text-align: center; color: var(--global-text-color-light); }
+
+.section p { line-height: 1.8; }
+
+.concept { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.5rem; align-items: start; }
+
+.concept .figure-block { margin-top: 0; }
+
+.subproject { padding: 1.5rem 0; border-top: 1px solid var(--global-divider-color); }
+
+.subproject:first-of-type { border-top: 0; padding-top: 0.25rem; }
+
+.subproject h3 { margin-bottom: 0.4rem; font-size: 1.25rem; font-weight: 500; }
+
+.subproject h3 .sub-no { margin-right: 0.4rem; color: var(--global-theme-color); }
+
+.subproject .sub-goal { margin-bottom: 0; color: var(--global-text-color-light); }
+
+.subproject .figure-block { margin-top: 1rem; }
+
+.prof-list { margin: 1rem 0 0; padding-left: 1.1rem; }
+
+.prof-list li { padding: 0.2rem 0; line-height: 1.7; }
+
+.effects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+
+.effects > div { padding: 1rem 1.1rem; border: 1px solid var(--global-divider-color); border-radius: 6px; background-color: var(--global-tile-color); }
+
+.effects h3 { margin-bottom: 0.6rem; font-size: 1rem; font-weight: 500; color: var(--global-theme-color); }
+
+.effects ul { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; }
+
+.effects li { padding: 0.15rem 0; line-height: 1.6; }
+
+@media (max-width: 767.98px) {
+  .concept { grid-template-columns: 1fr; }
+  .effects { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 575.98px) {
+  .center-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .center-header .center-logo { width: 120px; }
+  .center-header .post-title { font-size: 1.6rem; }
+  .figure-block img { padding: 0.4rem; }
+}
+
+:lang(ko) p, :lang(ko) li, :lang(ko) dd { font-weight: 400; }
+
+.post-header .post-description { font-weight: 300; }
+
+html[data-theme='dark'] .center-header .center-logo { padding: 8px; background: #ffffff; border-radius: 8px; }
+
+
+.concept-points { margin: 0.75rem 0 0; padding-left: 1.1rem; }
+
+.concept-points li { padding: 0.15rem 0; line-height: 1.7; }
+
+.post-header:not(.center-header) { margin-bottom: 2rem; }
