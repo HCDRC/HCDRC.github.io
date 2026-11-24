@@ -6,6 +6,7 @@
   var DATA = window.HCDRC_DATA || {};
   var PUBS = DATA.publications || [];
   var PATENTS = DATA.patents || [];
+  var SOFTWARE = DATA.software || [];
 
   var PUB_TYPES = { conference: 'Conference', journal: 'Journal' };
 
@@ -86,11 +87,32 @@
         PATENTS.filter(function (p) { return p.status !== 'registered'; }));
   }
 
+  /* -------------------------------------------------------------- Software */
+
+  // Each entry reads "Name: URL", with the URL itself as the link.
+  function softwareItem(e) {
+    var name = '<span class="title"' + langAttr(e.name) + '>' + esc(e.name) + '</span>';
+    if (!e.url) return '<li>' + name + '</li>';
+    return '<li>' + name + ': ' +
+      '<a class="url" href="' + esc(e.url) + '" target="_blank" rel="noopener noreferrer">' + esc(e.url) + '</a>' +
+      '</li>';
+  }
+
+  function renderSoftware(el) {
+    if (!SOFTWARE.length) {
+      el.innerHTML = emptyState('No software yet.');
+      return;
+    }
+    // One list without year headings (like the patent sections); data.js keeps it sorted by name, A to Z.
+    el.innerHTML = '<ol class="bibliography name-list">' + SOFTWARE.map(softwareItem).join('') + '</ol>';
+  }
+
   /* ------------------------------------------------------------------ Init */
 
   var targets = {
     'publication-list': renderPublications,
-    'patent-list': renderPatents
+    'patent-list': renderPatents,
+    'software-list': renderSoftware
   };
 
   Object.keys(targets).forEach(function (id) {

@@ -227,6 +227,16 @@ html[data-theme='dark'] .lightbox::backdrop { background: rgba(0, 0, 0, 0.65); }
 
 .publications ol.bibliography li:last-child { margin-bottom: 0; }
 
+/* "Name: URL" lists (Software) have one line per entry, so the entries sit closer together,
+   each with a bullet on the left. Long URLs wrap anywhere instead of widening the page. */
+.publications ol.bibliography.name-list { list-style: disc; padding-left: 1.25rem; }
+
+.publications ol.bibliography.name-list li { margin-bottom: 0.55rem; padding-left: 0.2rem; }
+
+.publications ol.bibliography.name-list li .url { overflow-wrap: anywhere; }
+
+.publications ol.bibliography.name-list li:last-child { margin-bottom: 0; }
+
 .publications ol.bibliography li .title { font-weight: 400; color: var(--global-text-color); }
 
 .publications ol.bibliography li a.title:hover { color: var(--global-theme-color); }
